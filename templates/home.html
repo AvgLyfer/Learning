@@ -9,19 +9,26 @@
       #banner {
         height: 360px;
         width: 100%;
+        object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img id="banner" src="/static/banner.jpg"  class="img-fluid">
     <div class="container">
       <h1 class="text-center mt-2 mb-4">
         {{companyname}} Careers
       </h1>
-      <img id="banner" src="/static/banner.jpg"  class="img-fluid">
-      <h2 class="text-center mt-2 mb-4">
-        About {{companyname}}
-      </h2>
+      <div class="row" style="margin-bottom: 16px;">
+        <div class="col-md-6">
       <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus lorem non ex accumsan, non egestas lectus tempus. Nam fringilla maximus convallis. Cras a turpis porta lectus consequat eleifend. Fusce varius quis risus a tincidunt. Maecenas nulla orci, luctus id nibh ac, porta scelerisque felis. Cras elementum orci eros, ac tempor massa bibendum non. Mauris porta felis vitae ligula laoreet, eget tincidunt est consectetur. Aenean ullamcorper ac tortor quis viverra. Suspendisse in ante ipsum. Suspendisse lectus lectus, vestibulum in dolor id, sodales mollis dolor. Nam pellentesque nisl massa, vel sodales magna rutrum sit amet. Morbi molestie lectus quis lorem viverra ullamcorper. Praesent interdum felis tempus tellus rhoncus aliquet. Etiam condimentum porta erat egestas iaculis. Phasellus posuere elementum lacus in condimentum.</p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+          <img src="/static/img1.jpg" style="height: 420px; border-radius: 4px;">
+        </div>
+      </div>
       <h2 class="text-center mt-2 mb-4">Open Positions</h2>
       <div>
         {% for job in jobs %}
@@ -29,9 +36,9 @@
         {% endfor %}
       </div>
       <div class="text-center"> 
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2024, placeholder</p>
+        <a href="mailto:test@jobhub.com?subject=Inquiry%20on%20Job%20Openings&body=Name%20%3A%20%3CYour%20Name%3E%0D%0AInquiry%20%3A%20%3CYour%20Inquiry%3E" class="btn btn-primary btn-lg">Contact Us</a>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
